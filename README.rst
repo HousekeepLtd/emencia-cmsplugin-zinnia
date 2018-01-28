@@ -1,6 +1,6 @@
-================
-Cmsplugin-zinnia
-================
+========================
+emencia-cmsplugin-zinnia
+========================
 
 Cmsplugin-zinnia is a bridge between `django-blog-zinnia`_ and
 `django-cms`_.
@@ -11,6 +11,10 @@ powered Weblog into your django-cms Web site.
 The code bundled in this application is a copy of the original
 ``zinnia.plugins`` module, made for forward compatibility with
 django-blog-zinnia > 0.11.
+
+
+.. Note::
+    This is a fork of original `cmsplugin-zinnia <https://github.com/django-blog-zinnia/cmsplugin-zinnia>`_ to be able to release an alternative (temporary?) package to fix compatibility issues with ``DjangoCMS>=3.4``.
 
 .. contents::
 
@@ -100,6 +104,14 @@ Example: ::
 
 Changelog
 =========
+
+0.8.2
+-----
+
+Fixed compatibility with ``DjangoCMS>=3.4``:
+
+* Merged `pull request #64 <https://github.com/django-blog-zinnia/cmsplugin-zinnia/pull/64>`_;
+* Merged `pull request #65 <https://github.com/django-blog-zinnia/cmsplugin-zinnia/pull/65>`_;
 
 0.8.1
 -----
