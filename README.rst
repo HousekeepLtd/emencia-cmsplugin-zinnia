@@ -105,6 +105,11 @@ Example: ::
 Changelog
 =========
 
+0.8.2.1
+-------
+
+Renamed ``cms_toolbar.py`` to ``cms_toolbars.py`` so Zinnia application appear again in CMS toolbar.
+
 0.8.2
 -----
 
