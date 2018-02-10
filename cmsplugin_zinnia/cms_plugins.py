@@ -70,6 +70,8 @@ class CMSLatestEntriesPlugin(ZinniaCMSPluginBase):
         """
         entries = Entry.published.all()
 
+        self.render_template = instance.render_template
+
         if instance.categories.count():
             cats = instance.categories.all()
 
@@ -113,6 +115,8 @@ class CMSSelectedEntriesPlugin(ZinniaCMSPluginBase):
         """
         Update the context with plugin's data
         """
+        self.render_template = instance.render_template
+
         context = super(CMSSelectedEntriesPlugin, self).render(
             context, instance, placeholder)
         context['entries'] = instance.entries.all()

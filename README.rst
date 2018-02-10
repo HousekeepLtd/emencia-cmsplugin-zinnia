@@ -105,6 +105,11 @@ Example: ::
 Changelog
 =========
 
+0.8.2.2
+-------
+
+Fixed ``CMSLatestEntriesPlugin`` and ``CMSSelectedEntriesPlugin`` to use selected template to render instead of default plugin one.
+
 0.8.2.1
 -------
 
