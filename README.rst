@@ -100,15 +100,52 @@ Example: ::
     ('entry_custom_bis.html', 'Entry custom bis')
     ]
 
+CMSPLUGIN_ZINNIA_BASE_TEMPLATES
+-------------------------------
+**Default value:** ::
+
+  [('cmsplugin_zinnia/entry_list.html', _('Entry list (default)')),
+   ('cmsplugin_zinnia/entry_detail.html', _('Entry detailed')),
+   ('cmsplugin_zinnia/entry_slider.html', _('Entry slider'))]
+
+Available base templates, these are the shipped template from this application.
+Commonly you will prefer to use ``CMSPLUGIN_ZINNIA_TEMPLATES`` to add new
+templates.
+
+CMSPLUGIN_ZINNIA_DEFAULT_TEMPLATE
+---------------------------------
+**Default value:** ``None``
+
+Initial value for ``template_to_render`` field. If empty or undefined, initial
+value will be the first item of available template choices.
+
 .. _changelog:
 
 Changelog
 =========
 
+0.8.2.3
+-------
+
+Fixed ``template_to_render`` field missing a default value that could result
+to broken page when no template was selected at plugin creation.
+
+* Past migrations have been modified to clean them from any hardcoded
+  choices that triggered warning message about changed model needing new
+  migration when you added new template choices;
+* Added data migration to fix plugins entries with empty value for
+  ``template_to_render`` fields, they will be filled with defaut template;
+* ``template_to_render`` fields can no longer be empty, select input do not
+  show anymore option for empty value;
+
+Everything is backward compatible. After updating you will just need to
+perform migration for ``cmsplugin_zinnia`` app.
+
 0.8.2.2
 -------
 
-Fixed ``CMSLatestEntriesPlugin`` and ``CMSSelectedEntriesPlugin`` to use selected template to render instead of default plugin one.
+Fixed ``CMSLatestEntriesPlugin`` and ``CMSSelectedEntriesPlugin`` to use
+selected template to render instead of default plugin one.
 
 0.8.2.1
 -------

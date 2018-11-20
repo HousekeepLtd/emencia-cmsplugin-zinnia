@@ -4,6 +4,9 @@ from __future__ import unicode_literals
 from django.db import models, migrations
 
 
+from cmsplugin_zinnia.choices_helpers import get_template_choices
+
+
 class Migration(migrations.Migration):
 
     dependencies = [
@@ -26,9 +29,7 @@ class Migration(migrations.Migration):
         migrations.AlterField(
             model_name='latestentriesplugin',
             name='template_to_render',
-            field=models.CharField(choices=[('cmsplugin_zinnia/entry_list.html', 'Entry list (default)'),
-                                            ('cmsplugin_zinnia/entry_detail.html', 'Entry detailed'),
-                                            ('cmsplugin_zinnia/entry_slider.html', 'Entry slider')],
+            field=models.CharField(choices=get_template_choices(),
                                    blank=True, verbose_name='template', max_length=250,
                                    help_text='template used to display the plugin'),
         ),
@@ -41,9 +42,7 @@ class Migration(migrations.Migration):
         migrations.AlterField(
             model_name='queryentriesplugin',
             name='template_to_render',
-            field=models.CharField(choices=[('cmsplugin_zinnia/entry_list.html', 'Entry list (default)'),
-                                            ('cmsplugin_zinnia/entry_detail.html', 'Entry detailed'),
-                                            ('cmsplugin_zinnia/entry_slider.html', 'Entry slider')],
+            field=models.CharField(choices=get_template_choices(),
                                    blank=True, verbose_name='template', max_length=250,
                                    help_text='template used to display the plugin'),
         ),
@@ -56,9 +55,7 @@ class Migration(migrations.Migration):
         migrations.AlterField(
             model_name='randomentriesplugin',
             name='template_to_render',
-            field=models.CharField(choices=[('cmsplugin_zinnia/entry_list.html', 'Entry list (default)'),
-                                            ('cmsplugin_zinnia/entry_detail.html', 'Entry detailed'),
-                                            ('cmsplugin_zinnia/entry_slider.html', 'Entry slider')],
+            field=models.CharField(choices=get_template_choices(),
                                    blank=True, verbose_name='template', max_length=250,
                                    help_text='template used to display the plugin'),
         ),
@@ -71,9 +68,7 @@ class Migration(migrations.Migration):
         migrations.AlterField(
             model_name='selectedentriesplugin',
             name='template_to_render',
-            field=models.CharField(choices=[('cmsplugin_zinnia/entry_list.html', 'Entry list (default)'),
-                                            ('cmsplugin_zinnia/entry_detail.html', 'Entry detailed'),
-                                            ('cmsplugin_zinnia/entry_slider.html', 'Entry slider')],
+            field=models.CharField(choices=get_template_choices(),
                                    blank=True, verbose_name='template', max_length=250,
                                    help_text='template used to display the plugin'),
         ),

@@ -6,14 +6,8 @@ from django.utils.encoding import python_2_unicode_compatible
 
 from cms.models.pluginmodel import CMSPlugin
 
-from cmsplugin_zinnia.settings import PLUGINS_TEMPLATES
-
-TEMPLATES = [
-    ('cmsplugin_zinnia/entry_list.html', _('Entry list (default)')),
-    ('cmsplugin_zinnia/entry_detail.html', _('Entry detailed')),
-    ('cmsplugin_zinnia/entry_slider.html', _('Entry slider'))] \
-    + PLUGINS_TEMPLATES
-
+from cmsplugin_zinnia.choices_helpers import (get_template_choices,
+                                              get_default_template)
 
 @python_2_unicode_compatible
 class LatestEntriesPlugin(CMSPlugin):
@@ -46,8 +40,9 @@ class LatestEntriesPlugin(CMSPlugin):
         _('offset'), default=0,
         help_text=_('number of entries to skip from top of list'))
     template_to_render = models.CharField(
-        _('template'), blank=True,
-        max_length=250, choices=TEMPLATES,
+        _('template'), blank=False,
+        max_length=250, choices=get_template_choices(),
+        default=get_default_template(),
         help_text=_('template used to display the plugin'))
 
     @property
@@ -80,7 +75,8 @@ class SelectedEntriesPlugin(CMSPlugin):
         'zinnia.Entry', verbose_name=_('entries'))
     template_to_render = models.CharField(
         _('template'), blank=True,
-        max_length=250, choices=TEMPLATES,
+        max_length=250, choices=get_template_choices(),
+        default=get_default_template(),
         help_text=_('template used to display the plugin'))
 
     @property
@@ -111,7 +107,8 @@ class RandomEntriesPlugin(CMSPlugin):
         _('number of entries'), default=5)
     template_to_render = models.CharField(
         _('template'), blank=True,
-        max_length=250, choices=TEMPLATES,
+        max_length=250, choices=get_template_choices(),
+        default=get_default_template(),
         help_text=_('template used to display the plugin'))
 
     def __str__(self):
@@ -136,7 +133,8 @@ class QueryEntriesPlugin(CMSPlugin):
         help_text=_('0 means all the entries'))
     template_to_render = models.CharField(
         _('template'), blank=True,
-        max_length=250, choices=TEMPLATES,
+        max_length=250, choices=get_template_choices(),
+        default=get_default_template(),
         help_text=_('template used to display the plugin'))
 
     @property
