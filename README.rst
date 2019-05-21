@@ -14,7 +14,10 @@ django-blog-zinnia > 0.11.
 
 
 .. Note::
-    This is a fork of original `cmsplugin-zinnia <https://github.com/django-blog-zinnia/cmsplugin-zinnia>`_ to be able to release an alternative (temporary?) package to fix compatibility issues with ``DjangoCMS>=3.4``.
+    This is a fork of original
+    `cmsplugin-zinnia <https://github.com/django-blog-zinnia/cmsplugin-zinnia>`_
+    to be able to release an alternative package to fix compatibility issues
+    with ``DjangoCMS>=3.4``.
 
 .. contents::
 
@@ -123,6 +126,12 @@ value will be the first item of available template choices.
 
 Changelog
 =========
+
+0.8.2.4
+-------
+
+Fixed compatibility with ``Django>=2.0``. Validated as working with
+``Django==2.1.8``, ``django-cms==3.6.0`` and ``django-blog-zinnia==0.20``.
 
 0.8.2.3
 -------
