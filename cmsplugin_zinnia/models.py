@@ -1,6 +1,5 @@
 """Models of Zinnia CMS Plugins"""
 from django.db import models
-from django.utils import six
 from django.utils.translation import ugettext_lazy as _
 from six import python_2_unicode_compatible
 
