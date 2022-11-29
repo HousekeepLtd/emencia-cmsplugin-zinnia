@@ -17,3 +17,4 @@ node_modules
 django-apps-src
 demo_cmsplugin_zinnia/demo.db*
 demo_cmsplugin_zinnia/static/css/.sass-cache
+.idea/
