@@ -4,9 +4,11 @@ from django.utils.translation import ugettext_lazy as _
 from six import python_2_unicode_compatible
 
 from cms.models.pluginmodel import CMSPlugin
+import six
 
 from cmsplugin_zinnia.choices_helpers import (get_template_choices,
                                               get_default_template)
+
 
 @python_2_unicode_compatible
 class LatestEntriesPlugin(CMSPlugin):
@@ -14,7 +16,7 @@ class LatestEntriesPlugin(CMSPlugin):
     CMS Plugin for displaying latest entries
     """
 
-    featured = models.NullBooleanField(
+    featured = models.BooleanField(
         _('featured'),
         blank=True, null=True,
         choices=((True, _('Show featured entries only')),
@@ -161,5 +163,5 @@ class CalendarEntriesPlugin(CMSPlugin):
     def __str__(self):
         name = six.text_type(_('Calendar entries'))
         if self.year:
-            name = '%s: %s/%s' % (name, self.year, self.month)
+            name = f'{name}: {self.year}/{self.month}'
         return name
