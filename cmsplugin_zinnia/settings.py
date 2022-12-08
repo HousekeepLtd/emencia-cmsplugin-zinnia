@@ -1,6 +1,6 @@
 """Settings of cmsplugin_zinnia"""
 from django.conf import settings
-from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import gettext_lazy as _
 
 
 HIDE_ENTRY_MENU = getattr(settings, 'CMSPLUGIN_ZINNIA_HIDE_ENTRY_MENU', True)
