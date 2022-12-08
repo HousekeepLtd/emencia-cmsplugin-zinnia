@@ -1,6 +1,5 @@
 """Admin of Zinnia CMS Plugins"""
 from django.contrib import admin
-from django.template import RequestContext
 from django.utils.translation import ugettext_lazy as _
 
 from cms.admin.placeholderadmin import PlaceholderAdminMixin
@@ -17,8 +16,10 @@ class EntryPlaceholderAdmin(PlaceholderAdminMixin, EntryAdmin):
     EntryPlaceholder Admin
     """
     fieldsets = (
-        (_('Content'), {'fields': (('title', 'status'), 'image')}),) + \
-        EntryAdmin.fieldsets[1:]
+        (_('Content'), {
+            'fields': (('title', 'status'),)
+        }),
+    ) + EntryAdmin.fieldsets[1:]
 
     def save_model(self, request, entry, form, change):
         """
