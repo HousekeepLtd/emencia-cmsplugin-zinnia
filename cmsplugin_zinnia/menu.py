@@ -35,11 +35,9 @@ class EntryMenu(CMSAttachMenu):
             month = entry.creation_date.strftime('%m')
             month_text = format(entry.creation_date, 'b').capitalize()
             day = entry.creation_date.strftime('%d')
-
-            key_archive_year = 'year-%s' % year
-            key_archive_month = 'month-%s-%s' % (year, month)
-            key_archive_day = 'day-%s-%s-%s' % (year, month, day)
-
+            key_archive_year = f'year-{year}'
+            key_archive_month = f'month-{year}-{month}'
+            key_archive_day = f'day-{year}-{month}-{day}'
             if key_archive_year not in archives:
                 nodes.append(NavigationNode(
                     year, reverse('zinnia:entry_archive_year', args=[year]),
