@@ -11,6 +11,7 @@ include
 downloads
 src_eggs
 develop-eggs
+*.egg-info
 .installed.cfg
 cmsplugin_zinnia.egg-info
 node_modules
