@@ -3,8 +3,6 @@ from __future__ import unicode_literals
 
 from django.db import models, migrations
 
-from cmsplugin_zinnia.settings import PLUGINS_TEMPLATES
-
 
 from cmsplugin_zinnia.choices_helpers import get_template_choices
 
@@ -34,7 +32,7 @@ class Migration(migrations.Migration):
             name='LatestEntriesPlugin',
             fields=[
                 ('cmsplugin_ptr', models.OneToOneField(parent_link=True, auto_created=True, primary_key=True, serialize=False, to='cms.CMSPlugin', on_delete=models.CASCADE)),
-                ('featured', models.NullBooleanField(verbose_name='featured', choices=[(True, 'Show featured entries only'), (False, 'Hide featured entries')])),
+                ('featured', models.BooleanField(blank=True, null=True, verbose_name='featured', choices=[(True, 'Show featured entries only'), (False, 'Hide featured entries')])),
                 ('subcategories', models.BooleanField(default=True, help_text='include the entries belonging the subcategories', verbose_name='include subcategories')),
                 ('number_of_entries', models.PositiveIntegerField(default=5, help_text='0 means all the entries', verbose_name='number of entries')),
                 ('offset', models.PositiveIntegerField(default=0, help_text='number of entries to skip from top of list', verbose_name='offset')),

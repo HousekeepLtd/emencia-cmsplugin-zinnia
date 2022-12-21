@@ -28,8 +28,14 @@ setup(
         'Operating System :: OS Independent',
         'License :: OSI Approved :: BSD License',
         'Topic :: Software Development :: Libraries :: Python Modules'],
-
     license=cmsplugin_zinnia.__license__,
+    install_requires=[
+        'django-blog-zinnia',
+        'django-cms',
+        'djangocms_text_ckeditor',
+        'django>=2.2',
+        'six'
+    ],
     include_package_data=True,
     zip_safe=False
 )

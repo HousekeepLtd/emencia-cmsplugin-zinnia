@@ -35,7 +35,7 @@ LANGUAGES = (
     ('fr', gettext('French')),
 )
 
-MIDDLEWARE_CLASSES = (
+MIDDLEWARE = (
     'cms.middleware.utils.ApphookReloadMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -95,6 +95,8 @@ INSTALLED_APPS = (
     'cmsplugin_zinnia',
     'menus',
 )
+
+DEFAULT_AUTO_FIELD = 'django.db.models.AutoField'
 
 CMS_TEMPLATES = (
     ('cms/page.html', gettext('Default page')),

@@ -11,9 +11,11 @@ include
 downloads
 src_eggs
 develop-eggs
+*.egg-info
 .installed.cfg
 cmsplugin_zinnia.egg-info
 node_modules
 django-apps-src
 demo_cmsplugin_zinnia/demo.db*
 demo_cmsplugin_zinnia/static/css/.sass-cache
+.idea/

@@ -1,7 +1,7 @@
 """Plugins for CMS"""
 import itertools
 
-from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import gettext_lazy as _
 from django.contrib.staticfiles.storage import staticfiles_storage
 
 from tagging.models import TaggedItem

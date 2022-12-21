@@ -3,7 +3,7 @@ from django.utils.dateformat import format
 from django.urls import reverse
 from django.db.models.signals import post_save
 from django.db.models.signals import post_delete
-from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import gettext_lazy as _
 
 from menus.base import Modifier
 from menus.base import NavigationNode
@@ -35,11 +35,9 @@ class EntryMenu(CMSAttachMenu):
             month = entry.creation_date.strftime('%m')
             month_text = format(entry.creation_date, 'b').capitalize()
             day = entry.creation_date.strftime('%d')
-
-            key_archive_year = 'year-%s' % year
-            key_archive_month = 'month-%s-%s' % (year, month)
-            key_archive_day = 'day-%s-%s-%s' % (year, month, day)
-
+            key_archive_year = f'year-{year}'
+            key_archive_month = f'month-{year}-{month}'
+            key_archive_day = f'day-{year}-{month}-{day}'
             if key_archive_year not in archives:
                 nodes.append(NavigationNode(
                     year, reverse('zinnia:entry_archive_year', args=[year]),
