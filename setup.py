@@ -33,7 +33,7 @@ setup(
         'django-blog-zinnia',
         'django-cms',
         'djangocms_text_ckeditor',
-        'django>=2.2',
+        'django>=3.2',
         'six'
     ],
     include_package_data=True,
